@@ -1,0 +1,85 @@
+✅ Git Pull Fast-Forward Config – Quick Notes
+
+🧠 What it controls:
+Tells Git what to do when your local branch and remote branch have diverged.
+
+🔹 1. git config --global pull.ff only
+Only fast-forward allowed
+
+❌ git pull fails if history diverges
+
+You'll see:
+fatal: Not possible to fast-forward, aborting.
+----------------
+
+🔹 2. git config --global pull.ff false
+✅ Allows merge commit during git pull
+
+Default behavior on many setups (like in office)
+
+No error — Git just creates a merge commit if needed
+------------------------
+
+!!!! Be Caucious
+
+🔹 3. git config --global pull.rebase true
+✅ Rebase instead of merge on git pull
+
+Keeps history linear and clean
+
+Use only if you're comfortable with rebasing
+------------------------
+
+🔍 How to check your current config
+
+git config --get pull.ff
+git config --get pull.rebase
+---------------------------
+
+To configure Git to automatically merge divergent branches when performing a git pull
+
+git config pull.rebase false
+-------------------------------
+
+✅ What Are Diverged Branches in Git?
+Diverged branches mean both your local and remote branches have new commits the other doesn’t have — they have different histories from a common ancestor.
+
+🔍 Example:
+Let’s say your dev branch on GitHub has:
+
+A---B---C   (origin/dev)
+
+====
+
+And your local dev has:
+
+A---B---D   (local dev)
+
+===
+You added commit D locally
+
+Someone else pushed commit C to GitHub
+
+Now both branches have diverged from B
+
+⚠️ What Happens Now:
+
+If you try:
+
+git pull origin dev
+
+Git says:
+
+❌ "Not possible to fast-forward — branches have diverged."
+
+You must now choose:
+
+Merge: git pull --no-ff origin dev
+
+Rebase: git pull --rebase origin dev
+
+✅ Summary:
+Term	            Meaning
+Diverged	        Local and remote have different commits
+Fast-forward	    Only remote is ahead → Git can move pointer
+Needs merge	        When both sides have new commits

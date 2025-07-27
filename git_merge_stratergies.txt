@@ -1,0 +1,95 @@
+✅ GitHub PR Merge Strategies – Summary with Example
+
+Repo state before PR (feature_branch → master):
+
+A---B---C---D   (master)
+         \
+          E---F---M   (feature_branch)
+
+Where:
+
+E, F = feature commits
+
+M = conflict resolution commit in feature_branch after merging/rebasing master
+
+🔹 1. Create a merge commit
+
+*   Z  (master)
+|\  
+| * M  (feature_branch)
+| * F
+| * E
+* | D
+* | C
+* | B
+* | A
+
+Adds a new merge commit Z on master
+
+Preserves all commits and branch structure
+
+Good for full history, team collaboration
+
+❌ Non-linear history
+
+A -- B -- C -- D -------- Z  (master)
+         \             /
+          E -- F -- M        (feature_branch)
+
+---------------------------------------------------------------------------------
+
+🔹 2. Squash and merge
+
+* S  (master)  ← E + F + M combined
+* D
+* C
+* B
+* A
+
+Combines all commits into one commit S
+
+Keeps master history clean
+
+Good for feature PRs
+
+❌ Loses individual commit messages
+
+A -- B -- C -- D -- S    (master)
+         \
+          E -- F -- M    (feature_branch)
+
+---------------------------------------------------------------------------------------
+
+🔹 3. Rebase and merge
+
+
+* M' (master)
+* F'
+* E'
+* D
+* C
+* B
+* A
+
+Replays E, F, M as new commits (E', F', M') on top of D
+
+Clean and linear history
+
+✅ Keeps individual commits
+
+⚠️ Use with caution on shared branches
+
+✅ Strategy Comparison
+
+| Strategy         | Keeps All Commits | Clean History | Adds Merge Commit | Best For                   |
+| ---------------- | ----------------- | ------------- | ----------------- | -------------------------- |
+| Merge Commit     | ✅ Yes             | ❌ No          | ✅ Yes             | Full history, team merging |
+| Squash and Merge | ❌ No              | ✅ Yes         | ❌ No              | Feature PRs, tidy history  |
+| Rebase and Merge | ✅ Yes             | ✅ Yes         | ❌ No              | Clean linear history       |
+
+
+
+A -- B -- C -- D -- E' -- F' -- M'   (master)
+                         (feature_branch stays unchanged)
+
+------------------------------------------------------------------------------------------------------------------
