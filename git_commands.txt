@@ -1,0 +1,145 @@
+Git Adding New User: 
+
+	git config --global user.name "Github User Name"
+	git config --global user.email "your.email@example.com"
+
+	after adding new git user, if getting error to work with private repos:
+		 git clone https://username@github.com/username/repository.git
+
+	     eg. git clone https://shruti2906@github.com/shruti2906/testPrivateRepo.git
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Git Stash: 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Git Merge: 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Git push: 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.git what it contains?
+mobile applications for git ntifications etc?
+what is red token in github?
+
+FACt : more than 90 percents of the software projects use git
+
+git is SCM( source code mangement) s/w,  distributed version control system Git
+github is a cloud based hosting service owened by microsoft
+
+D:
+cd git
+cd Trial
+*git init  (hidden file will be added in  trial folder)
+*git clone https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation.git
+*D:\Git\Trial>ls
+*D:\Git\Trial>cd The-Complete-FAANG-Preparation
+*D:\Git\Trial\The-Complete-FAANG-Preparation>ls
+*D:\Git\Trial\The-Complete-FAANG-Preparation>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+*D:\Git\Trial\The-Complete-FAANG-Preparation>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   CODE_OF_CONDUCT.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+*D:\Git\Trial\The-Complete-FAANG-Preparation>git diff CODE_OF_CONDUCT.md
+diff --git a/CODE_OF_CONDUCT.md b/CODE_OF_CONDUCT.md
+index 91a55ff..e43c29e 100644
+--- a/CODE_OF_CONDUCT.md
++++ b/CODE_OF_CONDUCT.md
+@@ -1,4 +1,4 @@
+-# Contributor Covenant Code of Conduct
++# Contributor Co
+
+*D:\Git\Trial\The-Complete-FAANG-Preparation>git add CODE_OF_CONDUCT.md
+
+*D:\Git\Trial\The-Complete-FAANG-Preparation>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   CODE_OF_CONDUCT.md
+
+
+*git log =>It will show all the changes done so far in the project.
+
+*git show commit id; =>it will show all the changes done in that commit.
+
+*git branch =>it will show current branch.
+
+
+*to link local repo with remote repo : git remote <linkof remote repo>
+
+*to push all files committed to remote repo : git push -u origin <branch name>
+
+ <<<<<<< HEAD
+NOTE : git remote add origin <url>
+	here origin is just a nickname to remote repository
+	it's just a standard practice to call/name it origin
+	it could be anything e.g
+	git remote add ora <url>
+	then we'lll use:
+	git push -u ora master
+-------------------------------------------------------------------------------------------
+
+git remote remove origin;
+//it will remove the origin (the remote)
+
+---
+git diff --staged
+
+
+
+---------------------------------------------------------------------------------------------
+
+forward rerference problem:
+	git push -f origin master
+
+error discription: 
+	git push -u origin master
+	To https://github.com/Shruti2906/SQL.git
+	 ! [rejected]        master -> master (non-fast-forward)
+	hint: Updates were rejected because the tip of your current 	branch is behind
+	hint: its remote counterpart. Integrate the remote changes (e.g.
+	hint: 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' 	for details.
+
+
+-----------------------------------------------------------------------------------
+=======
+
+--------git push -u origin mater;
+error : Rejected!
+
+git fetch;
+git merge
+git push -u origin master
+>>>>>>> refs/remotes/ora/master 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+git branch -m main : Rename current branch to main, fails if main exists
+
+git branch -M main : Force rename current branch to main, deletes any existing main
+
+eg.
+you have 2 branchs dev & main, Now you run this from the dev branch:
+git branch -M main
+Git deletes the existing main branch, Then renames dev → main
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
