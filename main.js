@@ -9,3 +9,4 @@ const h = 8;
 console.log("a: ", a);
 
 console.log("c: ", c);
+console.log("d: ", d);
