@@ -8,3 +8,6 @@ const g = 7;
 const h = 8;
 console.log("a: ", a);
 console.log("b: ", b);
+console.log("c: ", c);
+console.log("d: ", d);
+
