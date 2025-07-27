@@ -13,4 +13,5 @@ console.log("d: ", d);
 console.log("This commit is to check squash & merge");
 console.log("This commit is to check squash & merge 2");
 console.log("This commit is to check squash & merge 3");
+console.log("This commit is to check squash & merge 4");
 
