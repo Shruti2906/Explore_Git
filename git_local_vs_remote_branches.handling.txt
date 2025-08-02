@@ -1,0 +1,56 @@
+    📘 Git: Local vs Remote Branch Handling Cheat Sheet
+
+
+🟩  Git: Local vs Remote Branch Handling Cheat Sheet
+
+ - Creates a local branch from a remote-tracking branch.
+
+ - Starts tracking the remote branch.
+
+ - Example: git checkout -b feature origin/feature
+ 
+ ----------------------------------------------------------------
+
+🟩 git push origin local-name:remote-name
+
+ - Pushes your local branch to a differently named remote branch.
+
+ - Creates the remote branch if it doesn't exist.
+
+ - Example: git push origin dev:new-feature
+
+----------------------------------------------------------------
+
+🟨 Local Exists, Remote Doesn’t
+Push with: git push origin branch-name
+
+Remote branch will be created.
+
+----------------------------------------------------------------
+
+🟧 Remote Exists, Local Doesn’t
+Fetch first: git fetch origin
+
+Create tracking branch:
+git checkout -b my-branch origin/remote-branch
+----------------------------------------------------------------
+🟥 Rename Branches
+
+Local: git branch -m old-name new-name
+
+Remote:
+
+git push origin new-name
+
+git push origin --delete old-name
+
+------------------------------------------------------------------
+
+🔁 Always Run git fetch
+
+Updates remote-tracking branches (like origin/main)
+
+Keeps your view of the remote up-to-date
+
+Safe before reset, rebase, or push
+------------------------------------------------------------------
