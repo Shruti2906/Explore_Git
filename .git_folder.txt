@@ -1,0 +1,21 @@
+📁 About .git Folder (Local Git Database)
+
+This is the heart of your Git repo — every Git command interacts with this folder.
+
+🔍 Located at:
+
+your-project/.git/
+
+Contains all Git's internal data:
+
+| Folder/File     | What It Does                                                                |
+| --------------- | --------------------------------------------------------------------------- |
+| `HEAD`          | Points to the current checked-out branch                                    |
+| `refs/heads/`   | Your **local branches**                                                     |
+| `refs/remotes/` | Your **remote-tracking branches** (e.g., `origin/master`)                   |
+| `objects/`      | Where Git stores actual commit data, blobs, trees — the real content        |
+| `config`        | Project-specific Git config (e.g., remotes, aliases, pull strategies, etc.) |
+| `logs/`         | Keeps track of branch movements and reflogs                                 |
+| `index`         | The **staging area** (what you see in `git status`)                         |
+| `FETCH_HEAD`    | Stores the result of your last `git fetch`                                  |
+| `MERGE_HEAD`    | Temporary file Git uses when a merge is in progress                         |
