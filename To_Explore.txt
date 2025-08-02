@@ -1,0 +1,29 @@
+| Concept                                        | Why It’s Useful                                                      |
+| ---------------------------------------------- | -------------------------------------------------------------------- |
+| Remote tracking branches (`origin/main`, etc.) | Understand how Git syncs local & remote                              |
+| `git fetch` vs `git pull`                      | Know when you're just updating vs merging                            |
+| Force push (`--force`, `--force-with-lease`)   | Safely overwrite remote history when needed                          |
+| Tracking branches (`--set-upstream`, `-u`)     | Auto-configure pull/push without specifying remote/branch every time |
+| Detached HEAD state                            | Know what happens when you checkout a commit/remote branch directly  |
+| Refspec (`src:dest`)                           | Power behind Git push/pull — lets you map branches                   |
+
+
+- what's tag in repo (along with commits tag is also there)
+
+
+where I left off:
+
+1. Git_local_vs_remote_branches Handling -> try each cmd manually on this github repo.
+
+2. try 'Rebase & merge' - see its impact on master branch & feature branchm try reusing feature branch after this merge.
+
+3. revert branch, revert commit, after PR merge.
+
+4. cherry-pick --skip.
+
+5. explore .git folder more.
+
+6. pick topics from To_Explore file.
+
+
+

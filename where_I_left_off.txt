@@ -1,0 +1,11 @@
+1. Git_local_vs_remote_branches Handling -> try each cmd manually on this github repo.
+
+2. try 'Rebase & merge' - see its impact on master branch & feature branchm try reusing feature branch after this merge.
+
+3. revert branch, revert commit, after PR merge.
+
+4. cherry-pick --skip.
+
+5. explore .git folder more.
+
+6. pick topics from To_Explore file.

@@ -83,3 +83,4 @@ After reset:
     feature: A---B---S       ← Now `feature` matches `main`
 
     - Old commits C–D–E are completely gone from feature.
+----------------------------------------------------------------------------------------------
