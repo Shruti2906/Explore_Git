@@ -1,0 +1,78 @@
+✅ Git Fetch & Related Commands – Quick Reference
+
+🔹 git fetch
+Fetches all remote branches and updates your local copy of them (like origin/master, origin/dev, etc.)
+
+Does not change your current working branch
+
+Safe way to see what's new on the remote without affecting local code
+----
+
+🔹 git fetch origin
+Same as above, but only fetches from the origin remote (usually GitHub)
+
+----
+
+🔹 git fetch origin master
+Fetches only the master branch from origin
+
+Updates origin/master locally
+
+Useful when you want to update just one remote branch
+
+------
+
+🔹 git merge FETCH_HEAD
+Merges the most recently fetched commit (from git fetch) into your current branch
+
+Common pattern:
+
+git fetch origin master
+git merge FETCH_HEAD
+
+---
+
+🔹 git log origin/feature_branch
+Shows the commit history of the remote feature_branch
+
+Lets you inspect what’s new before merging or rebasing
+
+---
+
+🔹 git checkout origin/feature_branch
+Checks out the remote branch in a detached HEAD state
+
+Useful to view the remote branch without affecting your local branch
+
+Tip: You cannot directly commit on this — use git checkout -b mybranch origin/feature_branch to create a local tracking branch
+
+-----
+
+📦 Where Are Fetched Branches Stored?
+
+After running git fetch, the fetched remote branches are stored as:
+origin/<branch-name>
+
+They are:
+
+Read-only references to the remote branches
+
+Available for viewing, diffing, and merging
+
+Not merged into your local branch until you explicitly do so
+
+You can list them with:
+
+git branch -r
+
+----
+
+| Command                              | Description                                   |
+| ------------------------------------ | --------------------------------------------- |
+| `git fetch`                          | Fetch all branches from all remotes           |
+| `git fetch origin`                   | Fetch all branches from `origin`              |
+| `git fetch origin master`            | Fetch only `master` branch from `origin`      |
+| `git merge FETCH_HEAD`               | Merge last fetched commit into current branch |
+| `git log origin/feature_branch`      | See commit history of remote branch           |
+| `git checkout origin/feature_branch` | View remote branch in detached mode           |
+| `origin/branch`                      | Local pointer to remote branch (post-fetch)   |
