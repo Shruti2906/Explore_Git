@@ -1,6 +1,13 @@
+🌱 Bottom Line
+Git mastery isn’t about memorization. It’s about understanding.
+If you understand what you want to do, you'll always find how to do it.
+
+
 1. Git_local_vs_remote_branches Handling -> try each cmd manually on this github repo.
+    have a look at git_remote file once brefore starting.
 
 2. try 'Rebase & merge' - see its impact on master branch & feature branchm try reusing feature branch after this merge.
+    check git log or similar to see the commit history on local cli after merge commit, squash merge, rebase.
 
 3. revert branch, revert commit, after PR merge.
 
