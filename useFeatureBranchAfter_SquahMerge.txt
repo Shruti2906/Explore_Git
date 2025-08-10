@@ -1,0 +1,86 @@
+📘 Git: What Happens to Feature Branch After Squash Merge & How to Reuse It
+
+Starting Point (Before Squash & Merge)
+main:    A---B
+                 \
+feature:           C---D---E
+
+
+🔀 What Squash and Merge Does:
+
+    main:    A---B---S        ← S is a single new commit (squashed C+D+E)
+    feature:           C---D---E
+
+    - Combines all commits from the feature branch into one single commit on the target branch (main).
+
+    - That commit is a regular commit, not a merge commit.
+
+    - The feature branch’s original commits are not marked as merged, so Git does not know they were already included.
+
+    - Result: If you try to use the same feature branch again, all old commits will appear again in the next pull request.
+
+---------------------------------------------------------
+
+♻️ How to Reuse a Feature Branch After Squash Merge
+
+✅ 1. Create a New Branch (Recommended)
+
+    git checkout main
+    git pull origin main
+    git checkout -b feature-new
+
+ - Starts fresh from the latest main.
+
+ - Safe and clean.
+
+ - No duplication of old commits.
+----------------------------------------------------------------
+
+ ✅ 2. Rebase Onto main
+    
+    git checkout feature
+    git rebase main
+
+ - This does not remove old commits already squashed.
+
+ - Instead, it replaces (not appends) all commits that are not in main with new versions (C → C', etc.).
+
+ - Git replays each old commit one-by-one as if it were written on top of the latest main.
+
+ - Problem: Since squash creates a new commit (S), Git doesn't know C, D, E were merged — so it replays them all again, causing duplication.
+
+🟡 Rebase is not the best option after a squash merge, unless you manually drop the squashed commits using interactive rebase (git rebase -i).
+
+main:    A---B---S
+                        \
+feature:                 C'--D'--E'
+
+
+--------------------------------------------------------------------
+
+✅ 3. Reset Feature Branch to Match main    
+
+    git checkout feature
+    git fetch origin       # ❗ MUST fetch to update remote info
+    git reset --hard origin/main
+
+ - Moves the feature branch pointer to match main exactly.
+
+ - Removes all old commits from the feature branch (C, D, E, etc.).
+
+ - Safe to start fresh work on the same branch.
+
+ - If you don't run git fetch, your origin/main will be outdated — and you'll reset to an older version, missing new commits like D.
+
+✅ Always git fetch before a reset to get the latest remote history.
+
+ -> --hard will discard uncommitted changes — use carefully.
+
+Assuming origin/main points to this:
+    main:    A---B---S
+
+After reset:
+    feature: A---B---S       ← Now `feature` matches `main`
+
+    - Old commits C–D–E are completely gone from feature.
+----------------------------------------------------------------------------------------------

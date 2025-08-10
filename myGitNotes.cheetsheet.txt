@@ -1,0 +1,130 @@
+# 📘 My Git Notes
+
+A personal reference sheet to remember what matters, not everything.
+
+---
+
+## 🔧 Common Daily Commands
+
+```bash
+# Clone a repo
+git clone <repo-url>
+
+# Create and switch to a new branch
+git checkout -b feature/some-task
+
+# Check branch status
+git status
+
+# Stage files
+git add <filename>
+
+# Commit changes
+git commit -m "Your message"
+
+# Push to remote
+git push origin your-branch-name
+
+# Pull latest changes from remote
+git pull origin main  # or your branch
+```
+
+---
+
+## 🌿 Branching & Merging
+
+```bash
+# List all branches
+git branch -a
+
+# Switch to another branch
+git checkout branch-name
+
+# Merge a branch into current one
+git merge feature-branch
+
+# Squash & Merge via GitHub UI for clean history
+```
+
+---
+
+## 🔁 Rebase, Reset & Fixing History
+
+```bash
+# Rebase feature onto main (replay commits)
+git checkout feature
+git fetch
+git rebase origin/main
+
+# Hard reset to remote main
+git reset --hard origin/main
+
+# Soft reset (keep changes staged)
+git reset --soft HEAD~1
+
+# Undo last commit (keep changes)
+git reset --mixed HEAD~1
+
+# Restore a modified file (cancel changes)
+git restore filename
+```
+
+---
+
+## 🧠 Local vs Remote
+
+```bash
+# Push local branch to different remote name
+git push origin local-branch:new-remote-branch
+
+# Create local from remote-tracking
+git checkout -b local-name origin/remote-name
+
+# Rename local branch
+git branch -m old-name new-name
+
+# Delete remote branch
+git push origin --delete branch-name
+```
+
+---
+
+## 🧪 Useful Checks
+
+```bash
+# View commits visually
+git log --oneline --graph --all
+
+# See what changed in file
+git diff filename
+
+# See branch relationship to remote
+git status
+```
+
+---
+
+## 💡 Pro Tips
+
+* `git fetch` often — it's safe and updates your view of remotes.
+* Use `git stash` to save work-in-progress without committing.
+* Don't be afraid to `git reset`, just double check and maybe create a backup branch.
+* Keep trying commands in a test repo — Git is easier when you break stuff and recover.
+* Use Git GUIs (VSCode, GitHub Desktop) to visualize when stuck.
+
+---
+
+## 📋 Practice Scenarios
+
+* [ ] Rebase a feature branch onto latest main
+* [ ] Reset a branch after squash merge and reuse it
+* [ ] Push local changes to a new remote branch name
+* [ ] Rename a branch locally and remotely
+* [ ] Fix a merge conflict
+* [ ] View and restore a previous commit
+* [ ] Use `stash` to switch tasks
+* [ ] Use `git reflog` to recover a lost commit
+
+---
+
+🧩 Add more examples, diagrams, or learnings as you go!

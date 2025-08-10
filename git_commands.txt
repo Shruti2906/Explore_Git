@@ -143,3 +143,7 @@ you have 2 branchs dev & main, Now you run this from the dev branch:
 git branch -M main
 Git deletes the existing main branch, Then renames dev → main
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+git switch -c new_branch_name : newer version of 'git checkout -b new_branch_name' same usage.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
