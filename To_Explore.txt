@@ -1,3 +1,13 @@
+
+
+
+🌱 Bottom Line
+Git mastery isn’t about memorization. It’s about understanding.
+If you understand what you want to do, you'll always find how to do it.
+
+
+
+
 | Concept                                        | Why It’s Useful                                                      |
 | ---------------------------------------------- | -------------------------------------------------------------------- |
 | Remote tracking branches (`origin/main`, etc.) | Understand how Git syncs local & remote                              |

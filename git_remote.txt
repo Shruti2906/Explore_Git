@@ -1,0 +1,53 @@
+📘 Short Notes: Git Remotes (For Quick Reference)
+
+🔹 What is a Remote?
+A remote in Git is a reference to a remote repository (usually hosted on GitHub, GitLab, Bitbucket, etc.). It allows syncing code between your local repo and remote server.
+
+
+| Command                           | Purpose                                                     |
+| --------------------------------- | ----------------------------------------------------------- |
+| `git remote -v`                   | Shows all remotes and their URLs                            |
+| `git remote add <name> <url>`     | Adds a new remote (e.g., `origin`, `backup`, `upstream`)    |
+| `git remote remove <name>`        | Removes a remote                                            |
+| `git remote set-url <name> <url>` | Changes the URL of a remote                                 |
+| `git remote show <name>`          | Shows detailed info like tracking branches, push/pull setup |
+
+
+------------------------------------------------------
+
+🔹 Multiple Remotes
+
+You can connect to multiple remote repositories from one local Git repo.
+
+Example:
+
+    git remote add origin https://github.com/user/repo.git
+    git remote add backup https://gitlab.com/user/repo.git
+
+Useful for:
+
+ - Mirroring/backup
+ - Forks (e.g., origin for your fork, upstream for the original repo)
+ - Pushing to multiple deployment targets
+---------------------------------------------------------------------------------------------
+
+🔹 Default Remote
+
+ - Git treats origin as the default remote.
+ - To change/set a different default for a branch:
+
+    git push -u backup main
+ or
+    git branch --set-upstream-to=backup/main main
+
+---------------------------------------------------------------------------------------------
+🔹 Fetching from Remotes
+
+ - git fetch → Fetches from default remote (origin)
+ - git fetch <name> → Fetches from a specific remote
+ - git fetch --all → Fetches from all configured remotes
+ - Remote tracking branches: stored as <remote>/<branch>, e.g., origin/main, backup/dev
+-----------------------------------------------------------------------------------------------
+ 💡 Tip:
+Use git branch -vv to see which local branches are tracking which remotes.
+
